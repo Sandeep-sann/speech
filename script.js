@@ -1,20 +1,12 @@
-function getStarted() {
-    alert("Let's get started with the Audio World!");
-    document.querySelector('.overlay').classList.add('hidden');
-    document.getElementById('converter-section').classList.remove('hidden');
-}
-
-function showConverter() {
-    document.querySelector('.overlay').classList.add('hidden');
-    document.getElementById('converter-section').classList.remove('hidden');
-}
-
 function convertTextToSpeech() {
     const textInput = document.getElementById('text-input').value;
     const audioOutput = document.getElementById('audio-output');
 
     const utterance = new SpeechSynthesisUtterance(textInput);
-    utterance.rate = 1;
+    
+    // Set speech rate to 0.5
+    utterance.rate = 0.5;
+
     utterance.pitch = 1;
 
     utterance.onend = function() {
